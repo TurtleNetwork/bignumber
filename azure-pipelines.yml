@@ -24,16 +24,22 @@ steps:
   inputs:
     command: 'custom'
     customCommand: 'test'
-
+  displayName: "Run tests"  
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'junit.xml'
 - task: Npm@1
   inputs:
     command: 'custom'
     customCommand: 'config set access public --global'
+  displayName: "Set package public"
 
 - task: Npm@1
   inputs:
     command: 'custom'
     customCommand: 'run build'
+  displayName: "Build"
 
 - script: |
     PackageName=$(npm list --json --depth=0 | sed -n 2p | cut -d '"' -f4)
