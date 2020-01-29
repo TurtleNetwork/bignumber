@@ -58,6 +58,10 @@
       "default",
       "jest-junit"
     ],
+    "coverageReporters": [
+      "text",
+      "cobertura"
+    ],
     "transform": {
       "^.+\\.(ts|tsx)$": "ts-jest"
     },
