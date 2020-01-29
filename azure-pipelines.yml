@@ -19,16 +19,24 @@ steps:
 - task: Npm@1
   inputs:
     command: 'install'
-
 - task: Npm@1
   inputs:
     command: 'custom'
     customCommand: 'test'
-  displayName: "Run tests"  
+  displayName: "Run tests"
+
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: 'Cobertura'
+    summaryFileLocation: '**/cobertura-coverage.xml'
+  condition: always()  
+
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: 'junit.xml'
+  condition: always()
+
 - task: Npm@1
   inputs:
     command: 'custom'
