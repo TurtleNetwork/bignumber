@@ -1,6 +1,6 @@
 {
-  "name": "@waves/bignumber",
-  "version": "0.0.1",
+  "name": "@turtlenetwork/bignumber",
+  "version": "0.0.2",
   "description": "Waves Library for work with Bignumber in javascript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/wavesplatform/bignumber.git"
+    "url": "https://github.com/TurtleNetwork/bignumber.git"
   },
   "scripts": {
     "test": "jest",
